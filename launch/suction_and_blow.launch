@@ -1,0 +1,4 @@
+ <launch>
+    <node pkg="vacuum_gripper" name="suction_and_blow" type="suction_and_blow" output="screen" launch-prefix="sudo -E">
+    </node>
+ </launch>
