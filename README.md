@@ -1,4 +1,4 @@
-# sbc_GPIO
+# Vacuum_Gripper
 JWT Robot Controller vacuum gripper control pkg
 
 # Install
