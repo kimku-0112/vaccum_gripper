@@ -1,42 +1,37 @@
 # sbc_GPIO
-vacuum gripper control pkg
+JWT Robot Controller vacuum gripper control pkg
 
 # Install
 ```
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
-git clone https://github.com/kimku-0112/sbc_GPIO.git
+git clone https://github.com/kimku-0112/vacuum_gripper.git
 ```
 # rebuild
 ```
-cd ~/catkin_ws/src/sbc_gpio
+cd ~/catkin_ws/src/vacuum_gripper
 ./rebuild.sh
 ```
 
 # build
 ```
-cd ~/catkin_ws/src/sbc_gpio
+cd ~/catkin_ws/src/vacuum_gripper
 ./build.sh
 ```
 
-# launch
+# Main launch
 
-## suction blow Main
-New Terminal
+## Vacuum gripper control node launch
 ```
-cd ~/catkin_ws/src/sbc_gpio
+cd ~/catkin_ws/src/vacuum_gripper
 ./1.suction_and_blow.sh
 ```
 
 
-## Set vaccum gripper Mode
-New Terminal
+# publish Test node launch
+## Set vaccum gripper Mode (Off = 0 / suction = 1 / blow off = 2)
 ```
-cd ~/catkin_ws/src/sbc_gpio
+cd ~/catkin_ws/src/vacuum_gripper
 ./2.pub_suction_and_blow.sh
 ```
 
-# warning
-이 package는 WU310Z3A PC ubuntu 16.04 ros kinetic 환경에서 동작합니다. 
-
-(그외의 환경에서는 작동하지 않습니다.)
