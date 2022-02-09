@@ -26,6 +26,8 @@ int main(int argc, char **argv){
   Init_Gpio();
   
   std::system("clear");
+  
+  std::cout << "vacuum grriper mode :: off\n";
 
   signal(SIGINT, shutdownHandler);
    
@@ -35,20 +37,17 @@ int main(int argc, char **argv){
 }
 
 void shutdownHandler(int sig){
-  while(getchar() != '\n');
-  std::cin.clear();
+  printg("\n");
   ros::shutdown();
 }
 
 void suctionblowCallback(const std_msgs::Int32::ConstPtr& msg){
   std::string suctionblow[3] = {"off","suction","blow"};
   int curSuctionBlow = setSuctionBlow(msg->data);  
-  std::cout << "vacuum grriper mode :: " << suctionblow[curSuctionBlow] << "\n";
-  for(int i = 0; i < 3000; i++){
-    printf("\r");
-    for(int j = 0; j <= i/500;j++) printf(".");
-    printf("                           \n");
-    usleep(1000);
+  for(int i = 0; i < 6; i++){
+    for(int j = 0; j <= i;j++) printf(".");
+    printf("                                                      \n\x1b[1A");
+    usleep(500000);
   }
   std::cout << "vacuum grriper mode :: " << suctionblow[curSuctionBlow] << "\n";
   suction_blow_ok.publish(msg);
