@@ -34,21 +34,15 @@ static unsigned int *C_GPIO_MEM_ADDR = NULL;
 #define OFF false
 #define ON  true
 
-enum suctionblow{
-    off = 0,
-    suction,
-    blow
-};
+enum suctionblow{off,suction,blow};
 
-//ros
-ros::Subscriber suction_blow;
-ros::Publisher suction_blow_data;
-ros::Publisher suction_blow_ok;
-void suctionblowCallback(const std_msgs::Int32::ConstPtr& msg);
-
-int curSuctionBlow = 0;
-
+void shutdownHandler(int sig);
 void Init_Gpio(void);
 void set_lvl(int suctionblow,int level);
 int setSuctionBlow(int suctionblow);
+
+//ros
+ros::Subscriber suction_blow;
+ros::Publisher suction_blow_ok;
+void suctionblowCallback(const std_msgs::Int32::ConstPtr& msg);
 #endif

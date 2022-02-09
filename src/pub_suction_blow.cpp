@@ -1,6 +1,7 @@
 #include "ros/ros.h"
 #include "std_msgs/Int32.h"
 #include <iostream>
+#include <signal.h>
 
 enum suctionblow{
     off = 0,
@@ -13,6 +14,13 @@ void clearInputBuffer(){
     std::cin.clear();
 }
 
+
+void shutdownHandler(int sig){
+  while(getchar() != '\n');
+  std::cin.clear();
+  ros::shutdown();
+}
+
 int main(int argc, char **argv){
 
   ros::init(argc, argv, "gpio_setoutput");
@@ -23,6 +31,8 @@ int main(int argc, char **argv){
   std::string str;
   int i = 0,gripper = 0;
   char ch;
+  
+  signal(SIGINT, shutdownHandler);
   while(ros::master::check()){    
     
     std_msgs::Int32 msg;
