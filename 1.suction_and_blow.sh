@@ -1,2 +1,1 @@
-source ~/catkin_ws/devel/setup.bash
-roslaunch vacuum_gripper suction_and_blow.launch
+sudo -s ~/catkin_ws/src/vaccum_gripper/script/suction_and_blow.sh
