@@ -37,7 +37,7 @@ int main(int argc, char **argv){
 }
 
 void shutdownHandler(int sig){
-  printg("\n");
+  printf("\n");
   ros::shutdown();
 }
 
