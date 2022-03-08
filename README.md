@@ -7,7 +7,7 @@ mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 git clone https://github.com/kimku-0112/vacuum_gripper.git
 ```
-<img src="./Image/install.gif"  width="960" height="405">
+<img src="./Image/install.gif"  width="640" height="270">
 
 # rebuild
 ```
