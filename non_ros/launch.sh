@@ -1,1 +1,1 @@
-sudo gpio.sh
+sudo ./gpio
